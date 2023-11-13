@@ -14,7 +14,7 @@ public class RegisterIssueApplication {
 	private final IssueRdbRepository issueRdbRepository;
 
 	public void start(RegisterIssueInput input) {
-		RequestIssueDto dto = RequestIssueDto.builder().type(input.type()).createDate(input.createDate()).build();
+		RequestIssueDto dto = RequestIssueDto.builder().type(input.type()).build();
 		issueRdbRepository.save(dto);
 	}
 }

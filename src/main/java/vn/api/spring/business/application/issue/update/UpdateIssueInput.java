@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 @Accessors(fluent = true)
-@Builder
+@Builder(toBuilder = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

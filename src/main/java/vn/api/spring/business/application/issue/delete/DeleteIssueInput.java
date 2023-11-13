@@ -1,6 +1,4 @@
-package vn.api.spring.business.application.issue.register;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+package vn.api.spring.business.application.issue.delete;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +11,6 @@ import lombok.experimental.Accessors;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterIssueInput {
-	@JsonProperty("type")
-	private String type;
+public class DeleteIssueInput {
+  private int id;
 }

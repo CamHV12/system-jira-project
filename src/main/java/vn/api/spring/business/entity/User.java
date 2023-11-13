@@ -8,12 +8,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Builder
+@Accessors(fluent = true)
 @Table(name = "users")
 public class User {
 	@Id

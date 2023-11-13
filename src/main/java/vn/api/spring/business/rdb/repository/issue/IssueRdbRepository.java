@@ -30,14 +30,18 @@ public class IssueRdbRepository {
 	}
 
 	public void save(RequestIssueDto dto) {
-		Issue issue = Issue.builder().type(dto.type()).createDate(dto.createDate()).build();
+		Issue issue = Issue.builder().type(dto.type()).createDate(LocalDateTime.now()).build();
 		issueJpaRepository.save(issue);
 	}
 
 	public void update(RequestIssueDto dto) {
-		LocalDateTime createDate = issueJpaRepository.findById(dto.id()).get().createDate();
-		Issue issue = Issue.builder().id(dto.id()).type(dto.type()).createDate(createDate).updateDate(dto.updateDate())
-				.build();
+		Issue issue = Issue.builder().id(dto.id()).type(dto.type()).createDate(dto.createDate())
+				.updateDate(LocalDateTime.now()).build();
 		issueJpaRepository.save(issue);
+	}
+
+	public void deleteById(int id) {
+		Assert.notNull(id, "id must not be null");
+		issueJpaRepository.deleteById(id);
 	}
 }
